@@ -8,8 +8,10 @@ class Tweet
   index({:coordinates => "2d"}, {background: true})
 
   def self.search(params)
-    p "hello"
-    p params[:lat]
-    self.near(coordinates: [params[:lat].to_f, params[:long].to_f]).max_distance(coordinates: params[:radius].to_f)
+    if params[:long].blank?
+      self.all
+    else
+      self.near(coordinates: [params[:long].to_f, params[:lat].to_f]).max_distance(coordinates: params[:radius].to_f)
+    end
   end
 end

@@ -12,3 +12,7 @@
  *= require_tree .
  */
 @import "twitter/bootstrap";
+
+.col-md-8 {
+	word-wrap: break-word;
+}
