@@ -8,8 +8,8 @@ task :get_feed => :environment do
     config.auth_method = :oauth
   end
 
-  TweetStream::Client.new.start('/1.1/statuses/filter.json', :locations => ENV["COORDS"], :method => :post) do |status|
-    Tweet.create(created_at: status.created_at, text: status.text, screen_name: status.user.screen_name, coordinates: status.geo.coordinates)
+  TweetStream::Client.new.start('/1.1/statuses/filter.json', :locations => "-180,-90,180,90", :method => :post) do |status|
+    t = Tweet.create(created_at: status.created_at, text: status.text, screen_name: status.user.screen_name, coordinates: status.geo.coordinates)
   end
 end
 
