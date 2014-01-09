@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
 gem 'rails', '3.2.14'
-
+gem 'figaro'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 gem 'mongoid'
@@ -21,9 +21,9 @@ end
 
 gem 'kaminari'
 gem 'jquery-rails'
-gem 'anjlab-bootstrap-rails', :require => 'bootstrap-rails',
-                              :github => 'anjlab/bootstrap-rails'
-
+# gem 'anjlab-bootstrap-rails', :require => 'bootstrap-rails',
+#                               :github => 'anjlab/bootstrap-rails'
+gem 'bootstrap-sass', '~> 3.0.3.0'
 group :test do
   gem 'rspec-rails'
 end
